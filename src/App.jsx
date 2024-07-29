@@ -1,13 +1,17 @@
-import CustomerForm from "./components/CustomerForm"
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import CustomerForm from "./components/CustomerForm";
 
 function App() {
   return (
     <>
-      <div>
-        <CustomerForm/>
-      </div>
+      <Provider store={store}>
+        <div>
+          <CustomerForm />
+        </div>
+      </Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
