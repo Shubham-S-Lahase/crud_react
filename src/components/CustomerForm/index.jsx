@@ -1,7 +1,7 @@
+import style from "./index.module.css";
 import { useState } from "react";
 
 const CustomerForm = () => {
-
   const [customer, setCustomer] = useState({
     pan: "",
     fullName: "",
@@ -33,9 +33,8 @@ const CustomerForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>PAN:</label>
+    <form onSubmit={handleSubmit} className={style.formContainer}>
+      <div className={style.fieldBox}>
         <input
           type="text"
           name="pan"
@@ -43,9 +42,9 @@ const CustomerForm = () => {
           required
           maxLength={10}
         />
+        <label>PAN:</label>
       </div>
-      <div>
-        <label>Full Name:</label>
+      <div className={style.fieldBox}>
         <input
           type="text"
           name="fullName"
@@ -54,9 +53,9 @@ const CustomerForm = () => {
           required
           maxLength={140}
         />
+        <label>Full Name:</label>
       </div>
-      <div>
-        <label>Email:</label>
+      <div className={style.fieldBox}>
         <input
           type="email"
           name="email"
@@ -65,10 +64,9 @@ const CustomerForm = () => {
           required
           maxLength={255}
         />
+        <label>Email:</label>
       </div>
-      <div>
-        <label>Mobile Number:</label>
-        <span>+91</span>
+      <div className={style.fieldBox}>
         <input
           type="text"
           name="mobile"
@@ -77,11 +75,11 @@ const CustomerForm = () => {
           required
           maxLength={10}
         />
+        <label>Mobile Number:</label>
       </div>
       {customer.addresses.map((address, index) => (
-        <div key={index}>
-          <div>
-            <label>Address Line 1:</label>
+        <div key={index} style={{position: "relative"}}>
+          <div className={style.fieldBox}>
             <input
               type="text"
               name="line1"
@@ -89,18 +87,18 @@ const CustomerForm = () => {
               onChange={(e) => handleAddressChange(index, e)}
               required
             />
+            <label>Address Line 1:</label>
           </div>
-          <div>
-            <label>Address Line 2:</label>
+          <div className={style.fieldBox}>
             <input
               type="text"
               name="line2"
               value={address.line2}
               onChange={(e) => handleAddressChange(index, e)}
             />
+            <label>Address Line 2:</label>
           </div>
-          <div>
-            <label>Postcode:</label>
+          <div className={style.fieldBox}>
             <input
               type="text"
               name="postcode"
@@ -108,12 +106,13 @@ const CustomerForm = () => {
               required
               maxLength={6}
             />
+            <label>Postcode:</label>
           </div>
-          <div>
+          <div className={style.fieldBox}>
             <label>State:</label>
             <input type="text" name="state" value={address.state} readOnly />
           </div>
-          <div>
+          <div className={style.fieldBox}>
             <label>City:</label>
             <input type="text" name="city" value={address.city} readOnly />
           </div>

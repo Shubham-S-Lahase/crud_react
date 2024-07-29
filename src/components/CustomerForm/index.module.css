@@ -1,0 +1,69 @@
+.formContainer {
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 10px;
+}
+
+.fieldBox {
+  position: relative;
+}
+
+.fieldBox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  background: transparent;
+}
+
+.fieldBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.fieldBox input:focus ~ label{
+  top: -20px;
+  left: 0;
+  color: #00000065;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.formContainer button{
+    background: transparent;
+    padding: 10px 40px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid #414141;
+    border-radius: 10px;
+}
+
+.formContainer button:hover{
+    background: #414141;
+    color: #fff;
+    border: 2px solid #414141;
+}
+
+.formContainer button:focus{
+    outline: none;
+}
