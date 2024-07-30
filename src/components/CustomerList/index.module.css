@@ -1,72 +1,76 @@
-.listContainer{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
 }
 
-.listdiv{
-    padding: 20px;
-    background: #ffffff98;
-    box-shadow: rgba(0, 0, 0, 0.15) 3.95px 3.95px 2.6px;
+.listdiv {
+  padding: 20px;
+  background: #ffffff98;
+  box-shadow: rgba(0, 0, 0, 0.15) 3.95px 3.95px 2.6px;
 }
 
-.listdiv h3{
-    margin: 0;
+.listdiv h3 {
+  margin: 0;
 }
 
-.addDiv{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.addDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .addDiv p {
-    margin: 5px 0 5px 0;
-    font-size: 1rem;
-    width: 100%;
+  margin: 5px 0 5px 0;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.addDiv button{
-    position: relative;
-    right: 10%;
-    width: 10%;
-    background: transparent;
-    padding: 3px 9px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: 2px solid #414141;
-    border-radius: 10px;
+.addDiv button {
+  position: relative;
+  right: 10%;
+  width: 10%;
+  background: transparent;
+  padding: 3px 9px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid #414141;
+  border-radius: 10px;
 }
 
-.addDiv button:hover{
-    background: #414141;
-    color: #fff;
-    border: 2px solid #414141;
+.addDiv button:hover {
+  background: #414141;
+  color: #fff;
+  border: 2px solid #414141;
 }
 
-.dbtns{
-    width: 10%;
-    background: transparent;
-    padding: 3px 9px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: 2px solid #414141;
-    border-radius: 10px;
-    margin-right: 1%;
-    margin-top: 1%;
+.dbtns,
+#savebtn,
+#cancelbtn {
+  width: max-content;
+  background: transparent;
+  padding: 3px 9px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid #414141;
+  border-radius: 10px;
+  margin-right: 1%;
+  margin-top: 1%;
 }
 
-.dbtns:hover{
-    background: #414141;
-    color: #fff;
-    border: 2px solid #414141;
+.dbtns:hover,
+#savebtn:hover {
+  background: #414141;
+  color: #fff;
+  border: 2px solid #414141;
 }
 
-#delbtn:hover{
-    background: darkred;
-    color: #fff;
-    border: 2px solid darkred;
+#delbtn:hover,
+#cancelbtn:hover {
+  background: darkred;
+  color: #fff;
+  border: 2px solid darkred;
 }
 
 .dropdown {
@@ -81,8 +85,8 @@
   opacity: 1;
 }
 
-.dropdown h4{
-    margin: 0;
+.dropdown h4 {
+  margin: 0;
 }
 
 .modal {
@@ -97,6 +101,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1000;
+  width: 25%;
 }
 
 .modal.open {
@@ -117,4 +122,42 @@
 
 .modal-backdrop.open {
   opacity: 1;
+}
+
+.fieldBox {
+  position: relative;
+}
+
+.fieldBox input {
+  width: 100%;
+  padding: 10px 0;
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  background: transparent;
+}
+
+.fieldBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 20px;
+  color: #000000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.fieldBox input:focus ~ label,
+.fieldBox input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #060057;
+  font-size: 16px;
+  font-weight: 700;
 }

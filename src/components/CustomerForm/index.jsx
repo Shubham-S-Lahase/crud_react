@@ -65,7 +65,6 @@ const CustomerForm = () => {
     }
   }, [postcodeDetails]);
 
-
   const handleChange = (e) => {
     setCustomer({ ...customer, [e.target.name]: e.target.value });
   };
@@ -108,9 +107,8 @@ const CustomerForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addCustomer(customer));
-    navigate('/customers')
+    navigate("/customers");
   };
-  
 
   return (
     <form onSubmit={handleSubmit} className={style.formContainer}>
@@ -194,7 +192,9 @@ const CustomerForm = () => {
               maxLength={6}
             />
             <label>Postcode</label>
-            {loadingPostcode && <span id={style.ext} className={style.spinner}></span>}
+            {loadingPostcode && (
+              <span id={style.ext} className={style.spinner}></span>
+            )}
           </div>
           <div className={style.fieldBox}>
             <input type="text" name="state" value={address.state} required />

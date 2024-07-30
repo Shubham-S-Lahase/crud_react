@@ -100,13 +100,13 @@ input[type="number"] {
   animation: spinner 1s linear infinite;
 }
 
-.error{
-    color: red;
-    font-size: 12px;
-    font-weight: 1000;
-    position: absolute;
-    right: 0;
-    top: 10px;
+.error {
+  color: red;
+  font-size: 12px;
+  font-weight: 1000;
+  position: absolute;
+  right: 0;
+  top: 10px;
 }
 
 @media screen and (max-width: 600px) {
