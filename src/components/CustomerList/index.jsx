@@ -7,6 +7,7 @@ const CustomersList = () => {
   const dispatch = useDispatch();
   const { postcodeDetails } = useSelector((state) => state.customer);
 
+  // State variables to manage customers and their interactions
   const [customers, setCustomers] = useState([]);
   const [expandedCustomerIndex, setExpandedCustomerIndex] = useState(null);
   const [editCustomerIndex, setEditCustomerIndex] = useState(null);
@@ -24,6 +25,7 @@ const CustomersList = () => {
     city: "",
   });
 
+  // Fetch customers from local storage on component mount
   useEffect(() => {
     const storedCustomers = JSON.parse(localStorage.getItem("customers")) || [];
     setCustomers(storedCustomers);
@@ -92,6 +94,7 @@ const CustomersList = () => {
     }
   };
 
+  // Fetch postcode details and update state and city fields
   const handleGetPostcodeDetails = async (postcode, isEdit = false) => {
     const isValidPostcode = /^[0-9]{6}$/.test(postcode);
 
@@ -129,6 +132,7 @@ const CustomersList = () => {
     }
   };
 
+  // Toggle the visibility of customer details
   const toggleCustomerDetails = (index) => {
     setExpandedCustomerIndex(expandedCustomerIndex === index ? null : index);
   };

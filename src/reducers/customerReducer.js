@@ -2,6 +2,7 @@ const initialState = {
     customers: [],
   };
   
+  // Reducer to handle customer-related actions
   const customerReducer = (state = initialState, action) => {
     switch (action.type) {
       case 'ADD_CUSTOMER':

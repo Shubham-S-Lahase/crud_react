@@ -12,10 +12,12 @@ const CustomerForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+    // Get state data from Redux store
   const { panVerification, postcodeDetails } = useSelector(
     (state) => state.customer
   );
 
+// State for customer details
   const [customer, setCustomer] = useState({
     pan: "",
     fullName: "",
@@ -32,12 +34,14 @@ const CustomerForm = () => {
     ],
   });
 
+    // Additional state for loading indicators and errors
   const [loadingPAN, setLoadingPAN] = useState(false);
   const [loadingPostcode, setLoadingPostcode] = useState(false);
   const [isPanValid, setIsPanValid] = useState(null);
   const [panInput, setPanInput] = useState("");
   const [panError, setPanError] = useState("");
 
+  // Effect to handle changes in PAN verification state
   useEffect(() => {
     if (panVerification) {
       setLoadingPAN(false);
@@ -53,6 +57,7 @@ const CustomerForm = () => {
     }
   }, [panVerification]);
 
+   // Effect to handle changes in postcode details state
   useEffect(() => {
     if (postcodeDetails?.status === "Success") {
       const newAddresses = [...customer.addresses];
@@ -80,6 +85,7 @@ const CustomerForm = () => {
     setPanInput(pan);
     setCustomer({ ...customer, pan });
 
+    // PAN pattern validation
     const panPattern = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
 
     if (panPattern.test(pan)) {
