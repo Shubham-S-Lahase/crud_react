@@ -6,9 +6,11 @@ import {
   verifyPAN,
   getPostcodeDetails,
 } from "../../actions/customerActions";
+import { useNavigate } from "react-router-dom";
 
 const CustomerForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { panVerification, postcodeDetails } = useSelector(
     (state) => state.customer
@@ -103,15 +105,10 @@ const CustomerForm = () => {
     }
   };
 
-  const logCustomers = () => {
-    const customers = JSON.parse(localStorage.getItem('customers')) || [];
-    console.log('Customers in localStorage:', customers);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addCustomer(customer));
-    logCustomers();
+    navigate('/customers')
   };
   
 
